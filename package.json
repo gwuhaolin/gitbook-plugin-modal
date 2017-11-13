@@ -1,0 +1,31 @@
+{
+  "name": "gitbook-plugin-modal",
+  "version": "0.0.1",
+  "description": "gitbook plugin modal",
+  "main": "index.js",
+  "scripts": {},
+  "author": "gwuhaolin",
+  "license": "ISC",
+  "engines": {
+    "gitbook": "*"
+  },
+  "gitbook": {
+    "properties": {
+      "html": {
+        "type": "string",
+        "default": "please config your modal content",
+        "description": "modal content html string"
+      },
+      "closable": {
+        "type": "boolean",
+        "default": true,
+        "description": "modal can't be close?"
+      },
+      "excludeUrls": {
+        "type": "array",
+        "default": [],
+        "description": "page url list should not show modal in RegExp"
+      }
+    }
+  }
+}
