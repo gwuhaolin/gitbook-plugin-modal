@@ -9,6 +9,8 @@ require(['gitbook'], function (gitbook) {
         return;
       }
       var div = window.document.createElement('div');
+      div.style.left = $bookBody.offsetLeft + 'px';
+      div.style.width = $bookBody.clientWidth + 'px';
       div.className = className;
       div.innerHTML = '<div class="gitbook-plugin-modal-content">' + content + '</div>';
       $bookBody.appendChild(div);
