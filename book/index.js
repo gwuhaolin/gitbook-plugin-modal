@@ -34,11 +34,17 @@ require(['gitbook'], function (gitbook) {
       }
     }
 
-    showModal(html, closeable);
+    function checkModal() {
+      showModal(cfg.html, closeable);
+    }
+
+    checkModal();
+
     if (!closeable) {
-      $bookBody.addEventListener('scroll', function () {
-        showModal(cfg.html, closeable);
-      });
+      $bookBody.addEventListener('scroll', checkModal);
+
+      var $bodyInner = window.document.getElementsByClassName('body-inner')[0];
+      $bodyInner.addEventListener('scroll', checkModal);
     }
   });
 });
