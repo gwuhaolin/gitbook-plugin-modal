@@ -51,8 +51,6 @@ require(['gitbook'], function (gitbook) {
       showModal(html, closeable);
     }
 
-    checkModal();
-
     // 事件监听检查
     $bookBody.addEventListener('scroll', checkModal);
     var $bodyInner = window.document.getElementsByClassName('body-inner')[0];
