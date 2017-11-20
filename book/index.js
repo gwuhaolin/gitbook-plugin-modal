@@ -23,6 +23,10 @@ require(['gitbook'], function (gitbook) {
     }
 
     function showModal(content, closeable) {
+      if ($bookBody.getElementsByClassName('gitbook-plugin-modal').length > 0) {
+        $bookBody.getElementsByClassName('gitbook-plugin-modal')[0].style.display = 'block';
+        return;
+      }
       $modal = window.document.createElement('div');
       $modal.style.left = $bookBody.offsetLeft + 'px';
       $modal.style.width = $bookBody.clientWidth + 'px';
@@ -44,9 +48,6 @@ require(['gitbook'], function (gitbook) {
         if (exReg.test(decodeURI(window.location.href))) {
           return;
         }
-      }
-      if ($bookBody.getElementsByClassName('gitbook-plugin-modal').length > 0) {
-        return;
       }
       showModal(html, closeable);
     }
