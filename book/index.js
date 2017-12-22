@@ -13,6 +13,7 @@ require(['gitbook'], function (gitbook) {
     var shouldClose = false;
     var $modal;
     var $bookBody = window.document.getElementsByClassName('book-body')[0];
+    var $bodyInner = window.document.getElementsByClassName('body-inner')[0];
 
     function closeModal() {
       if ($modal) {
@@ -36,6 +37,9 @@ require(['gitbook'], function (gitbook) {
       if (closeable) {
         $modal.onclick = closeModal;
       }
+
+      $bookBody.style.overflow = 'hidden';
+      $bodyInner.style.overflow = 'hidden';
     }
 
     function checkModal() {
@@ -54,7 +58,6 @@ require(['gitbook'], function (gitbook) {
 
     // 事件监听检查
     $bookBody.addEventListener('scroll', checkModal);
-    var $bodyInner = window.document.getElementsByClassName('body-inner')[0];
     $bodyInner.addEventListener('scroll', checkModal);
     window.document.getElementById('book-search-input').getElementsByTagName('input')[0].addEventListener('input', closeModal);
   });

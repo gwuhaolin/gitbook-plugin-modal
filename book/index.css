@@ -14,13 +14,13 @@
   background-color: #fff;
   max-width: 80%;
   max-height: 80%;
-  overflow: scroll;
-  padding: 30px;
+  padding: 10px 60px;
   border-radius: 3px;
   box-shadow: 2px 2px 5px #999;
+  box-sizing: border-box;
   z-index: 3;
 }
 
-.adsbygoogle {
-  z-index: 4;
+#adContent {
+  z-index: 4 !important;
 }
